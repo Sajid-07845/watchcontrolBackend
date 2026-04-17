@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: watch-store
+
+  # DataSource Configuration
+  datasource:
+    url: "${MYSQL_URL}"
+    username: "${MYSQL_USERNAME}"
+    password: "${MYSQL_PASSWORD}"
+
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: "${SERVER_PORT:8081}"
+
+watchstore:
+  app:
+    jwtSecret: "${JWT_SECRET}"
+    jwtExpirationMs: "${JWT_EXPIRATION}"
+
+logging:
+  level:
+    org.springframework.cache: DEBUG
